@@ -14,4 +14,4 @@ jobs:
         run : cd netflix-ui
       
       - name : run the code
-        run : yarn start
+        run : yarn add react-scripts && yarn start
