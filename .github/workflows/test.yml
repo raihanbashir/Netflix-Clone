@@ -5,13 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-      - run: actions/checkout@v2
+        uses: actions/checkout@v2
       
       - name : Move to the ui-directiory
-      - run : cd netflix-ui
+        run : cd netflix-ui
       
       - name : install yarn
-      - run : sudo npm install -g yarn
+        run : sudo npm install -g yarn
 
       - name : run the code
-      - run : yarn start
+        run : yarn start
