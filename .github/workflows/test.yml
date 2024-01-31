@@ -7,8 +7,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       
-      - name : Move to the ui-directiory
-        run : cd netflix-ui
+#      - name : Move to the ui-directiory
+ #       run : cd netflix-ui
       
       - name : install yarn
         run : sudo npm install --global yarn
