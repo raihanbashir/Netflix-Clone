@@ -11,7 +11,7 @@ jobs:
         run : cd netflix-ui
       
       - name : install yarn
-        run : sudo npm install -g yarn
+        run : sudo npm install --global yarn
 
       - name : run the code
         run : yarn start
