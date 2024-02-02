@@ -11,7 +11,7 @@
     "eslint-plugin-react": "^7.33.2"
   },
   "scripts": {
-    "lint": "eslint.js",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
