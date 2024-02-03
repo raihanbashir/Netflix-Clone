@@ -26,7 +26,7 @@ export default function Login() {
         onAuthStateChanged(firebaseAuth,(currentUser)=> {
             if(currentUser) navigate("/");
         });
-        }, []);
+    }, []);
     return <Container>
         <BackgroundImage />
         <div className="content">
