@@ -6,14 +6,17 @@
    Test-for-errors:
      runs-on: ubuntu-latest
      steps:
-       - name: Check out repository code
-         uses: actions/checkout@v2
+      - name: Check out repository code
+        uses: actions/checkout@v2
        
-       - name : Move to the ui-directiory
-         run : cd netflix-ui/
+      - name : Move to the ui-directiory
+        run : cd netflix-ui/
+         
+      - name : Install packages
+        run : npm i 
 
-       - name : install yarn
-         run : sudo npm install --global yarn
+      - name : install yarn
+        run : sudo npm install --global yarn
 
-       - name : run the code
-         run : yarn start
+      - name : run the code
+        run : yarn start
