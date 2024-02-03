@@ -24,7 +24,7 @@ export default function Signup() {
     };
     useEffect(() => {
     onAuthStateChanged(firebaseAuth,(currentUser)=> {
-        //if(currentUser) navigate("/");
+        if(currentUser) navigate("/");
     });
     }, []);   
 

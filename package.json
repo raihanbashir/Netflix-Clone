@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "firebase": "^10.7.2"
+    "firebase": "^10.7.2",
+    "prop-types": "^15.8.1"
   },
   "name": "netflix-clone",
   "description": "",
@@ -10,7 +11,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2"
   },
-  "scripts":{
+  "scripts": {
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
