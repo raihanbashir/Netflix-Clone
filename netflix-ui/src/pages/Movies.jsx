@@ -10,6 +10,8 @@ import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 import NotAvailable from "../components/NotAvailable";
 import SelectGenre from "../components/SelectGenre";
+import axios from "axios";
+
 
 
 export default function Movies() {
@@ -25,7 +27,7 @@ export default function Movies() {
 
     useEffect(()=> {
         if (genresLoaded) dispatch(fetchMovies({ type: "movie" }))
-    });
+    },[]);
 
     window.onscroll =()=>{
         setIsScrolled(window.scrollY === 0 ? false : true);
@@ -45,7 +47,7 @@ export default function Movies() {
             </div>
             
             <div className="data">
-                <SelectGenre genres = {genres} type = "movies" />
+                <SelectGenre genres = {genres} type = "movie" />
                 {movies.length ? <Slider movies={movies}/> : <NotAvailable />}
             </div>
         </Container>
