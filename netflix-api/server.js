@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/", {
+mongoose.connect("mongodb+srv://raihanbashir:p0tat0es@netflix.cffwwsf.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(()=> {
