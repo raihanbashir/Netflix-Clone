@@ -13,7 +13,7 @@ module.exports.addToLikedMovies = async(req,res) => {
                     },
                     {new: true}
                 );
-            } else return re.json({msg: "Movie already added to the liked list"});
+            } else return res.json({msg: "Movie already added to the liked list"});
 
         }else await User.create({email,likedMovies:[data]})
 
