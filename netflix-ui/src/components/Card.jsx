@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import video from "../assets/video.mp4";
 import { IoPlayCircleSharp } from "react-icons/io5";
@@ -12,12 +13,14 @@ import{ BiChevronDown } from "react-icons/bi";
 import {firebaseAuth} from "../utils/firebase-config"
 import {onAuthStateChanged } from "firebase/auth";
 import axios from "axios";
+import { removeFromLikedMovies } from "../store";
 
 
 export default React.memo(function Card({ movieData, isLiked = false }) {
    const navigate = useNavigate();
    const [email, setEmail] = useState(false);
    const [isHover,setIsHover] = useState(false);
+   const dispatch = useDispatch();
 
    onAuthStateChanged(firebaseAuth,(currentUser)=> {
       if(currentUser) setEmail(currentUser.email);
@@ -71,7 +74,7 @@ export default React.memo(function Card({ movieData, isLiked = false }) {
                         <RiThumbUpFill title = "Like" />
                         <RiThumbDownFill title = "Dislike" />
                         {isLiked ? (
-                           <BsCheck title = "Remove from List" /> 
+                           <BsCheck title = "Remove from List" onClick={()=>dispatch(removeFromLikedMovies({movieId: movieData.id,email}))}/> 
                         ):(
                            <AiOutlinePlus title = "Add to my list" onClick={addToList}/>
                         )}
